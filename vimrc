@@ -305,3 +305,4 @@ let b:match_ignorecase = 1
 " wrong.  Either turn caps lock off or alert me of the fact that caps lock is
 " still on.
 
+set cursorline
