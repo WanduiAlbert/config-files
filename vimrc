@@ -72,6 +72,8 @@ if filereadable($HOME.'/.vim/bundle/Vundle.vim/autoload/vundle.vim')
   let g:ycm_autoclose_preview_window_after_completion = 1
 endif
 
+filetype plugin on " For using taglist plugin
+
 filetype plugin indent on        " Automatically detect file types.
 syntax on                        " syntax highlighting
 
