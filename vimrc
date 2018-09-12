@@ -226,7 +226,7 @@ set pastetoggle=<F12>            " pastetoggle (sane indentation on pastes)
 " The actual setting of tabstop, etc, happens in vim/after/ftplugin/python.vim
 " To configure this on a per-computer basis, you can source this common file
 " and, after sourcing it, overwrite this variable.
-let g:python_use_two_spaces = 1
+let g:python_use_two_spaces = 0 
 
 " ****************** GENERAL SHORTCUTS *******************
 " map lhs rhs replaces lhs with rhs.
