@@ -135,7 +135,7 @@ endif
 set backspace=indent,eol,start   " backspace for dummys
 set showmatch                    " show matching brackets/parenthesis
 set wildmenu                     " show list instead of just completing
-set wildmode=list:longest,full   " comand <Tab> completion, list matches, then
+set wildmode=list:longest,full   " command <Tab> completion, list matches, then
                                  " longest common part, then all.
 set shortmess+=filmnrxoOtT       " abbrev. of messages (avoids 'hit enter')
 set showmode                     " display the current mode
@@ -214,10 +214,10 @@ match ExtraWhitespace /\s\+$/
 "set autoindent                  " indent at the same level of the previous line
 "set smartindent                 " do more indentation after indenty things
                                  " NOTE: can interfere with filetype indentation
-set tabstop=2                    " 2 columns per tab
-set expandtab                    " turn tabs into spaces
-set shiftwidth=2                 " > and < will (un)indepnt 2 columns
-set softtabstop=2                " when I press 'tab', vim inserts 2 columns
+set tabstop=4                    " 4 columns per tab
+set softtabstop=4                " when I press 'tab', vim inserts 4 columns
+set shiftwidth=4                 " > and < will (un)indent 4 columns
+set noexpandtab                  " dont turn tabs into spaces
 " set matchpairs+=<:>            " match, to be used with %
 set pastetoggle=<F12>            " pastetoggle (sane indentation on pastes)
 " set comments=sl:/*,mb:*,elx:*/ " auto format comment blocks
@@ -227,6 +227,7 @@ set pastetoggle=<F12>            " pastetoggle (sane indentation on pastes)
 " To configure this on a per-computer basis, you can source this common file
 " and, after sourcing it, overwrite this variable.
 let g:python_use_two_spaces = 0 
+let g:python_recommended_style = 0 
 
 " ****************** GENERAL SHORTCUTS *******************
 " map lhs rhs replaces lhs with rhs.
@@ -308,3 +309,11 @@ let b:match_ignorecase = 1
 " still on.
 
 set cursorline
+
+let &printexpr="(v:cmdarg=='' ? ".
+    \"system('lpr' . (&printdevice == '' ? '' : ' -P' . &printdevice)".
+    \". ' ' . v:fname_in) . delete(v:fname_in) + v:shell_error".
+    \" : system('mv '.v:fname_in.' '.v:cmdarg) + v:shell_error)"
+
+" Use YouCompleteMe python autocomplete
+let g:ycm_python_binary_path = "python3"
