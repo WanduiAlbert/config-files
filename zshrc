@@ -71,6 +71,9 @@ hosts=(odyssey.rc.fas.harvard.edu, resowiki.caltech.edu)
 # CUSTOMIZE(username)
 users=(awandui)
 accounts=(awandui)
+# CUSTOMIZE(username)
+users=(awandui)
+#accounts=(awandui)
 #zstyle ':completion:*:processes' command 'ps -o pid,s,nice,stime,args'
 #zstyle ':completion:*:urls' local 'www' '/var/www/htdocs' 'public_html'
 #zstyle '*' accounts $accounts
@@ -144,9 +147,6 @@ unsetopt correct_all     # correct my bad spelling of all argument son a line
                          # argument that is similar to a file in the current
                          # directory (eg, sudo git would correct to .git)
 # CUSTOMIZE(keyboard_layout)
-setopt dvorak            # zsh knows that I use dvorak when correcting my typos
-                         # NOTE: if you use qwerty, just delete this line; there
-                         # is no "qwerty" option that needs to be set.
 setopt print_exit_value  # prints the exit value of commands when it's not 0
                          # (success); useful when writing shell scripts
 
@@ -383,20 +383,23 @@ fi
 # will read the vimrc even if sudo sets the $HOME variable to /root
 # We can't do this with a normal alias because multiword aliases don't work: see
 # http://superuser.com/questions/105375/bash-spaces-in-alias-name
-sudo() { 
-  # If my editor is vim and the first argument in my sudo command is vi or vim
-  if [[ $EDITOR == "vim" && ( $1 == "vim" || $1 == "vi" ) ]]; then 
-    # $@ takes every argument.  ${@[2,-1]} takes every argument starting with 2
-    # (array slices in ZSH work similar to Python, so -1 represents the last
-    # element).  We want to turn "sudo vim foo bar baz" into "sudoedit foo bar
-    # baz", so going from 2 to the end is what we want.
-    command sudoedit "${@[2,-1]}"
-  else 
-    # Otherwise, just do the sudo command normally
-    command sudo "$@"
-  fi
-}
+#sudo() { 
+#  # If my editor is vim and the first argument in my sudo command is vi or vim
+#  if [[ $EDITOR == "vim" && ( $1 == "vim" || $1 == "vi" ) ]]; then 
+#    # $@ takes every argument.  ${@[2,-1]} takes every argument starting with 2
+#    # (array slices in ZSH work similar to Python, so -1 represents the last
+#    # element).  We want to turn "sudo vim foo bar baz" into "sudoedit foo bar
+#    # baz", so going from 2 to the end is what we want.
+#    command sudoedit "${@[2,-1]}"
+#  else 
+#    # Otherwise, just do the sudo command normally
+#    command sudo "$@"
+#  fi
+#}
 
+alias sonnet='wine /home/wanduialbert/.wine/drive_c/Program\ Files\ \(x86\)/Sonnet\ Software/14.52/bin/sonnet.exe'
+
+alias ssh_ody='ssh -Y -C -o ServerAliveInterval=30 -fN awandui@odyssey.rc.fas.harvard.edu'
 # Global aliases -- These do not have to be at the beginning of the command line
 # That means that if you have these aliased characters anywhere, they will be
 # replaced by zsh.

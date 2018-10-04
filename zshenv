@@ -15,7 +15,7 @@ CONFIG_PATH=`pwd`
 popd > /dev/null
 
 # CUSTOMIZE(shell)
-export SHELL=/bin/zsh
+export SHELL=/usr/bin/zsh
 # CUSTOMIZE(editor)
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
@@ -25,3 +25,4 @@ TZ='America/Los_Angeles'
 export TZ
 # My ackrc is in this config folder.
 export ACKRC=$CONFIG_PATH/ackrc
+export AM_CACHE_PATH=/home/wanduialbert/.am
