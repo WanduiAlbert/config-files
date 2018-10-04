@@ -45,7 +45,7 @@ zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' substitute 1
 # CUSTOMIZE(this_file)
-zstyle :compinstall filename '/home/samking/.zshrc'
+zstyle :compinstall filename '/Users/albertwandui/.zshrc'
 
 # insert all expansions for expand completer
 zstyle ':completion:*:expand:*' tag-order all-expansions
@@ -67,11 +67,10 @@ zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 # servers I want to be able to use tab completion to complete.
 # You can also use the users array to set the usernames for those hosts.
 # CUSTOMIZE(hosts)
-hosts=(myth.stanford.edu corn.stanford.edu xenon.stanford.edu \
-       codethechange.org samking.org practicalunix.org)
+hosts=(odyssey.rc.fas.harvard.edu, resowiki.caltech.edu)
 # CUSTOMIZE(username)
-users=(samking)
-#accounts=(samking)
+users=(awandui)
+accounts=(awandui)
 #zstyle ':completion:*:processes' command 'ps -o pid,s,nice,stime,args'
 #zstyle ':completion:*:urls' local 'www' '/var/www/htdocs' 'public_html'
 #zstyle '*' accounts $accounts
@@ -347,7 +346,7 @@ alias chmud=chmod             # chmud is a typo for chmod
 # http://superuser.com/questions/243338/how-should-i-automatically-change-my-zshrc-for-different-os
 case `uname` in
   Darwin)                     # Mac
-    alias ls='ls -G'
+    alias ls='ls -GFh'
     ;;
   Linux)
     alias ls='ls --color=auto'
